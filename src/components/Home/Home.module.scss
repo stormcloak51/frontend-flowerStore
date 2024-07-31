@@ -1,0 +1,205 @@
+
+.root {
+	margin: 50px auto;
+	border-radius: 17px;
+	border: 2px solid #A39081;
+	max-width: 1560px;
+	height: auto;
+	background-color: rgb(234,230,202, 0.9);
+	padding: 20px;
+	@media (max-width: 1560px) {
+		height: 100%;
+		border: 0;
+		border-bottom: 2px solid #A39081;
+		border-top: 2px solid #A39081;
+		border-radius: 0;
+	}
+	.filter {
+		display: flex;
+		justify-content: space-between;
+		.categories {
+			display: flex;
+			column-gap: 15px;
+			max-width: 800px;
+			padding-right: 25px;
+			// margin: 20px 20px;
+			@media (max-width: 1165px) {
+				overflow-x: auto;
+				white-space: nowrap;
+			}
+			.item {
+				white-space: nowrap;
+				font-family: Outfit;
+				cursor: pointer;
+				font-weight: 400;
+				font-size: 20px;
+				color: #49454f;
+				padding: 3px 5px;
+				border-radius: 12px;
+				border: 3px solid #79747E;
+				transition: all 0.5s ease-in-out;
+				&:hover {
+					background-color: #e8f1b8;
+					color: black;
+				}
+				&-active {
+					background-color: #e8f1b8;
+					color: black;
+				}
+			}
+		}
+		.sort {
+			// padding-left: 15px;
+			// position: relative;
+			padding-left: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			right: 120px;
+			white-space: nowrap;
+			svg {
+				// position: absolute;
+				// top: 10px;
+				height: 19px;
+				width: 19px;	
+			}
+			span {
+				font-family: Outfit;
+				font-size: 20px;
+				font-weight: 500;
+				color: black;
+				// position: relative;
+				// right: 100px;
+				span {
+					cursor: pointer;
+					color: #2C3E50;
+					font-weight: bold;
+					font-size: 1.1em;
+					text-decoration: default;
+					padding: 0 0 0px 5px;
+					border-radius: 5px;
+				}
+
+			}
+			.popup {
+				width: 156px;
+				border-radius: 12px;
+				height: 0;
+				position: absolute;
+				top: 190px;
+				right: 10;
+				z-index: 1;
+				background-color:  #F0F7E6;
+				padding: 0;
+				transition: height 0.5s linear, padding 1s ease;
+				overflow: hidden;
+				h1 {
+					font-size: 1.25em;
+					position: relative;
+					
+				}
+				ul {
+					
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					.item {
+						font-family: Outfit;
+						font-size: 1.1em;
+						cursor: pointer;
+						padding: 15px;
+						border-radius: 29px;
+						transition: all 0.1s ease-in-out;
+						&_active {
+							background-color: #e8f1b8;
+						}
+					}
+				}
+				&_active {
+					padding: 5px 20px;
+					overflow: hidden;
+					height: 225px;
+					transition: height 0.5s linear, padding 1s ease;
+				}
+			}
+		}
+	}
+	.container {
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		// grid-template-rows: repeat(2, 1fr);
+		grid-auto-rows: 1fr;
+		grid-column-gap: 15px;
+		grid-row-gap: 15px;
+		@media (max-width: 1560px) {
+			grid-template-columns: repeat(5, 1fr)
+		}
+		@media (max-width: 1165px) {
+			grid-template-columns: repeat(4, 1fr)
+		}
+		.item {
+			background-color: #a4ab85;
+			padding: 15px;
+			margin-top: 15px;
+			border-radius: 15px;
+
+			img {
+				height: 60%;
+				width: 100%;
+			}
+			.info {
+				display: flex;
+				justify-content: space-between;
+			
+				h2 {
+					font-size: 1.2em;
+					padding: 0 5px;
+					border-radius: 10px;
+					background-color: #B04F36; // B04F36
+					color: wheat;
+					display: inline;
+				}
+				.price {
+					color: black;
+					background-color: #e8def8;
+
+				}
+			}
+			h3 {
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				color: #49454f;
+				text-align: center;
+				font-size: 0.9em;
+			}
+			.btn {
+				font-family: Outfit;
+				font-size: 1.2em;
+				margin-top: 10px;
+				font-weight: 500;
+				text-align: center;
+				width: 100%;
+				height: 35px;
+				display: block;
+				border-radius: 15px;
+				outline: none;
+				border: none;
+				background-color: #e8f1b7;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+
+
+
+:root {
+	--toastify-color-progress-dark: #e8f1b7;
+	--toastify-color-dark: rgba(0, 0, 0, 0.7);
+}
+
+.item_skeleton {
+	// padding: 15px;
+	margin-top: 15px;
+}
