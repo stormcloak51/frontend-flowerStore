@@ -1,8 +1,14 @@
 import React from 'react'
 
+import { useSelector, useDispatch } from 'react-redux'
 import styles from './Search.module.scss'
+import { setSearchValue } from '../../../store/slices/filter'
+import { debounce } from 'lodash';
 
 export function Search() {
+	const searchValue = useSelector(state => state.filter.searchValue)
+	const dispatch = useDispatch();
+	const [value, setValue] = React.useState('');
 	const [isOpened, setOpened] = React.useState(false)
 	const searchRef = React.useRef()
 	const openRef = React.useRef()
@@ -40,8 +46,19 @@ export function Search() {
 			openRef.current.classList.toggle(styles.active)
 			
 		}
-		setOpened(!value)
+		setOpened(!value)		
 	}
+	const sendSearchValue = React.useCallback(
+		debounce((fixedVal) => {
+			dispatch(setSearchValue(fixedVal));
+		}, 350), [dispatch])
+
+	const handleSearch = (e) => {
+		const fixedVal = e.target.value;
+		setValue(fixedVal)
+		sendSearchValue(fixedVal)
+	}
+
 	return (
 		<div
 		
@@ -69,7 +86,8 @@ export function Search() {
 				</svg>
 			</div>
 			<div ref={searchRef} className={styles.search}>
-				<input type='text' placeholder='Search for items...' />
+				<input type='text' placeholder='Search for items...' value={value}
+				onChange={handleSearch}/>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='24'
