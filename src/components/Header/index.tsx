@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+// import React, { useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import styles from './Header.module.scss'
@@ -8,7 +8,7 @@ import Cart from '../Cart'
 
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { setItem, clearItems, selectCart } from '../../store/slices/cart'
-import {fetchFlowerItem} from '../../store/slices/flowerItem'
+import {fetchFlowerItem, item, statusAction} from '../../store/slices/flowerItem'
 
 // assets
 
@@ -17,8 +17,8 @@ import { ShoppingBasket } from 'lucide-react';
 
 function Header() {
 	const {id} = useParams()
-	const flowerItem = useSelector(state => state.flowerItem.item)
-	const status = useSelector(state => state.flowerItem.status)
+	const flowerItem: any = useSelector(item)
+	const status = useSelector(statusAction)
 	const dispatch = useDispatch()
 	const { totalPrice, amount } = useSelector(selectCart)
 	const location = useLocation().pathname
@@ -58,7 +58,7 @@ function Header() {
 							strokeWidth='2'
 							strokeLinecap='round'
 							strokeLinejoin='round'
-							class='lucide lucide-shopping-cart'>
+							className='lucide lucide-shopping-cart'>
 							<circle cx='8' cy='21' r='1' />
 							<circle cx='19' cy='21' r='1' />
 							<path d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12' />
@@ -80,7 +80,7 @@ function Header() {
 							stroke-width='2.5'
 							stroke-linecap='round'
 							stroke-linejoin='round'
-							class='lucide lucide-eraser'>
+							className='lucide lucide-eraser'>
 							<path d='m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21' />
 							<path d='M22 21H7' />
 							<path d='m5 11 9 9' />
@@ -98,7 +98,7 @@ function Header() {
 							stroke-width='2.5'
 							stroke-linecap='round'
 							stroke-linejoin='round'
-							class='lucide lucide-wallet'>
+							className='lucide lucide-wallet'>
 							<path d='M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1' />
 							<path d='M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4' />
 						</svg>
@@ -123,7 +123,7 @@ function Header() {
 							strokeWidth='2.5'
 							strokeLinecap='round'
 							strokeLinejoin='round'
-							class='lucide lucide-shopping-cart'>
+							className='lucide lucide-shopping-cart'>
 							<circle cx='8' cy='21' r='1' />
 							<circle cx='19' cy='21' r='1' />
 							<path d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12' />

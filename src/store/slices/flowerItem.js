@@ -43,4 +43,7 @@ const flowerItemSlice = createSlice({
 })
 // export const { setItems } = flowerSlice.actions
 
+export const item = (state) => state.flowerItem.item
+export const statusAction = (state) => state.flowerItem.status
+
 export default flowerItemSlice.reducer
