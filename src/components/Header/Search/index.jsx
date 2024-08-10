@@ -1,15 +1,20 @@
 import React from 'react'
-
-import { useSelector, useDispatch } from 'react-redux'
-import styles from './Search.module.scss'
-import { setSearchValue } from '../../../store/slices/filter'
 import { debounce } from 'lodash';
 
+import { useDispatch } from 'react-redux'
+import { setSearchValue } from '../../../store/slices/filter'
+
+// assets
+
+import styles from './Search.module.scss'
+
 export function Search() {
-	const searchValue = useSelector(state => state.filter.searchValue)
+
 	const dispatch = useDispatch();
+
 	const [value, setValue] = React.useState('');
 	const [isOpened, setOpened] = React.useState(false)
+
 	const searchRef = React.useRef()
 	const openRef = React.useRef()
 
@@ -50,8 +55,9 @@ export function Search() {
 	}
 	const sendSearchValue = React.useCallback(
 		debounce((fixedVal) => {
-			dispatch(setSearchValue(fixedVal));
-		}, 350), [dispatch])
+			console.log('test', fixedVal)
+			dispatch(setSearchValue(fixedVal))
+		}, 550))
 
 	const handleSearch = (e) => {
 		const fixedVal = e.target.value;

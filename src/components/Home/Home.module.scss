@@ -138,11 +138,21 @@
 		@media (max-width: 1165px) {
 			grid-template-columns: repeat(4, 1fr)
 		}
+		@media (max-width: 930px) {
+			grid-template-columns: repeat(3, 1fr)
+		}
+		@media (max-width: 700px) {
+			grid-template-columns: repeat(2, 1fr)
+		}
+		@media (max-width: 470px) {
+			grid-template-columns: repeat(1, 1fr)
+		}
 		.item {
 			background-color: #a4ab85;
 			padding: 15px;
 			margin-top: 15px;
 			border-radius: 15px;
+			text-decoration: none;
 
 			img {
 				height: 60%;
@@ -159,6 +169,9 @@
 					background-color: #B04F36; // B04F36
 					color: wheat;
 					display: inline;
+					
+					// white-space: nowrap;
+					
 				}
 				.price {
 					color: black;

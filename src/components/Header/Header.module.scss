@@ -6,6 +6,7 @@
 	backdrop-filter: blur(5px);
 	border-bottom: 1px solid #594C34;
 	height: 64px;
+	padding: 0 20px 0 0;
 	.logo {
 		display: flex;
 		align-items: center;
@@ -34,7 +35,10 @@
 		align-items: center;
 		transform: translateX(-120px);
 		margin-right: 20px;
+		text-decoration: none;
+		color: black;
 		.text {
+			font-family: Outfit;
 			font-size: 1.2rem;
 			font-weight: 700;
 		}
@@ -49,6 +53,73 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+	}
+	.clear {
+		background-color: #e9f2bd;
+		padding: 4px 8px;
+		border-radius: 10px;
+		cursor: pointer;
+		display: flex;
+		column-gap: 10px;
+		align-items: flex-start;
+		
+		margin-right: 20px;
+		span {
+			font-family: Outfit;
+			font-size: 1.2rem;
+			font-weight: 700;
+		}
+	}
+	.price {
+		background-color: #e9f2bd;
+		padding: 4px 8px;
+		border-radius: 10px;
+		cursor: pointer;
+		display: flex;
+		column-gap: 10px;
+		align-items: flex-start;
+		position: relative;
+
+		.text {
+			font-family: Outfit;
+			font-size: 1.2rem;
+			font-weight: 700;
+			flex-grow: 1;
+		}
+		.amount {
+			font-family: Outfit;
+			font-size: 1.2rem;
+			font-weight: 500;
+			border-radius: 50%;
+			background-color: rgba(89, 76, 52, 0.9);
+			padding: 0 6px;
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: -12px;
+			right: -12px;
+		}
+	}
+	.add {
+		background-color: #e9f2bd;
+		padding: 4px 8px;
+		border-radius: 10px;
+		cursor: pointer;
+		display: flex;
+		column-gap: 10px;
+		justify-content: center;
+		align-items: center;
+		margin-right: 40px;
+		text-decoration: none;
+		color: black;
+		span {
+			font-family: Outfit;
+			font-size: 1.2rem;
+			font-weight: 700;
+			flex-grow: 1;
 		}
 	}
 }

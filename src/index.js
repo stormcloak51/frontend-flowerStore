@@ -12,6 +12,7 @@ import Home from './components/Home'
 
 import {store} from './store/store'
 import { Provider } from 'react-redux'
+import FlowerItem from './components/FlowerItem'
 
 const main = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const main = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: '*', element: <NotFound /> },
       { path: "cart", element: <Cart /> },
+      { path: 'flower/:id', element: <FlowerItem /> }
     ]
   },
 ]);
