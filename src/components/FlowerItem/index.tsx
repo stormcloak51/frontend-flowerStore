@@ -11,7 +11,11 @@ export default function FlowerItem() {
 
 	const navigate = useNavigate()
 	const id = useParams().id
-	const [flower, setFlower] = React.useState();
+	const [flower, setFlower] = React.useState<{
+		title: string
+		price: number
+		img: string
+	}>();
 
 	React.useEffect(() => {
 		async function fetchFlower() {
